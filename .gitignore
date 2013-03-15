@@ -1,5 +1,4 @@
 nbproject*
-/app/cache/*
 /venodr/
 /composer.phar
 /app/config/db.php
