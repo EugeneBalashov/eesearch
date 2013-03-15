@@ -1,4 +1,5 @@
 <?php
+// 123
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array(
         'driver' => 'pdo_mysql',
