@@ -1,2 +1,3 @@
 /vendor/
 composer.phar
+/app/config/db.php
