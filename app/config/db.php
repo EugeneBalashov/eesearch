@@ -2,10 +2,10 @@
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array(
         'driver' => 'pdo_mysql',
-        'dbname' => 'u742733526_dev',
-        'host' => 'mysql.hostinger.com.ua',
-        'user' => 'u742733526_dev',
-        'password' => 'u742733526_dev',
+        'dbname' => 'dev',
+        'host' => '127.0.0.1',
+        'user' => 'test',
+        'password' => 'test',
         'charset'   => 'utf8',
     ),
 ));
