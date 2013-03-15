@@ -1,0 +1,44 @@
+{% extends 'base.twig' %}
+
+{% block scripts %}
+<script>
+$(document).ready(function () {
+    $('tr.users').on('click', function () {
+        location.href = '/admin/edit/user/' + $(this).attr('id');
+    });
+});
+</script>
+{% endblock %}
+
+{% block panel %}
+<table class="table table-bordered table-hover table-striped">
+    <caption><h3>Users <small>({{ users | length }})</small></h3></caption>
+    <thead>
+        <tr>
+            <th><center>Login</center></th>
+            <th><center>Name</center></th>
+            <!--<th><center>Action</center></th>-->
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr class="users" id="{{ user.uid }}">
+            <td>{{ user.login }}</td>
+            <td>{{ user.name }}</td>
+            <!--<td>
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                        Action
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('admin.edit.user', {'id': user.uid}) }}">Edit</a></li>
+                        <li><a href="">Delete</a></li>
+                    </ul>
+                </div>
+            </td>-->
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

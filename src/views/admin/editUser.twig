@@ -1,0 +1,26 @@
+{% extends 'base.twig' %}
+
+{% block panel %}
+
+<form action="{{ path('admin.edit.user', {'id': id}) }}" method="POST" {{ form_enctype(form) }}>
+    {% if form_errors(form) %}<div class="alert alert-error">{{ form_errors(form) }}</div>{% endif %}
+      
+    {{ form_label(form.login) }}
+    {% if form_errors(form.login) %}<div class="alert alert-error">{{ form_errors(form.login) }}</div>{% endif %}
+    {{ form_widget(form.login) }}
+        
+    {{ form_label(form.password) }}
+    {% if form_errors(form.password) %}<div class="alert alert-error">{{ form_errors(form.password) }}</div>{% endif %}
+    {{ form_widget(form.password) }}
+        
+    {{ form_label(form.name) }}
+    {% if form_errors(form.name) %}<div class="alert alert-error">{{ form_errors(form.name) }}</div>{% endif %}
+    {{ form_widget(form.name) }}
+    
+    {{ form_rest(form) }}
+        
+    {#{ form_widget(form) }#}
+    <p><input type="submit" class="btn btn-primary" /></p>
+</form>
+
+{% endblock %}

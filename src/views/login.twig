@@ -1,0 +1,17 @@
+{% extends 'base.twig' %}
+
+{% block title %}Sign In{% endblock %}
+
+{% block container %}
+
+<form action="{{ path('login_check') }}" method="POST" class="form-signin">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    {% if error %}
+        <div class="alert alert-error">{{ error }}</div>
+    {% endif %}
+    <input type="text" name="_username" value="{{ last_username }}" class="input-block-level" placeholder="Login" />
+    <input type="password" name="_password" value="" class="input-block-level" placeholder="Password" />
+    <input type="submit" value="Sign in" class="btn btn-large btn-primary" />
+</form>
+
+{% endblock container %}
